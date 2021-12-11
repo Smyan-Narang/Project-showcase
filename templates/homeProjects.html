@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block css %}
+
+<main class="app-main">
+            <!-- Topic Cards -->
+    <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <div class="row">
+
+                {% for project in projects %}
+
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="{% url 'Viewhomeproject' project.pk %}">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="{{project.image.url}}" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>{{project.name}}</h6>
+                                    <p>{{project.description}}</p>
+
+                                </div>
+                                <div class="text-container">
+                                    <a href="{% url 'Viewhomeproject' project.pk %}" class="ViewProject">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

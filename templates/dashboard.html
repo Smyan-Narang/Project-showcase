@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block css %}
+
+<div class="app-body">
+
+    <aside class="app-sidebar">
+      <div class="app-logo sticky-top">{{user.first_name}} {{user.last_name}}</div>
+      <div class="app-sidenav">
+
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard/">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/projects/">Projects</a>
+              <a class="nav-link" href="/AddProject/">Add project of your own</a>
+          </li>
+          </ul>
+
+      </div>
+    </aside>
+
+    <div>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+  </div>
+
+{% endblock %}
